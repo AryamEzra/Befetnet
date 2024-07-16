@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logo.png">
+    <title>Befitnet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <img class="imgIn" src="/img/logo.png" alt="logo">
+        <div class="con">
+            <h1 class="in">Sign In</h1>
+
+            <form class="signin-form" action="signIn.html" method="post">
+                <div class="input-container">
+                    <input type="text" class="input" name="username" placeholder="Email or User Name" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" class="input" name="password" placeholder="Password" required>
+                </div>
+
+                <button class="btnPass">Forgot Password?</button>
+                <hr style="color: #9747FF; width: 100%; margin-top: 100px;">
+                    <button class="btnIn" type="submit" onclick="window.location.href='main.html'">Sign In</button>
+                <hr style="color: #9747FF; width: 100%; margin-top: 20px; margin-bottom: 20px;">
+            </form>
+
+            <p class="p3">Or Sign In With</p>
+            <div class="socials">
+                <img class="soc" src="img/google.png" alt="google">
+                <img class="soc" src="img/facebook.png" alt="facebook">
+                <img class="soc" src="img/twitter.png" alt="twitter">
+                <img class="soc" src="img/linkedin.png" alt="linkedin">
+            </div>
+
+            <div class="flex1">
+                <p class="p2">Don't have an account?</p>
+                <button class="btn2" onclick="window.location.href='signUp.html'">Sign Up</button>
+            </div>
+    </div>
+    </div>
+</body>
+</html>
