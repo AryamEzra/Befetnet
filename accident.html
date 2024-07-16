@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logo.png">
+    <title>Befitnet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head> 
+<body>
+    <div class="container">
+        <div class="top to">
+            <i class="fa-solid fa-less-than"></i>
+            <p class="p4" onclick="window.location.href='main.html'">Back</p>
+        </div>
+        <div class="top">
+            <p class="p6">Report Accident</p>
+            <img class="imgAcc" src="/img/logo.png" alt="logo">
+        </div>
+
+        <form id="upload-form" class="signin-form1" action="signIn.html" method="post">
+            <div class="input-container1 hope">
+                <i class="fa-solid fa-location-dot input-icon1 sad"></i>
+                <input type="text" class="input1" name="username" placeholder="Location of Accident" required>
+            </div>
+        </form>
+
+        <div class="upload-container" id="upload-container">
+            <label for="upload-input">
+                <i id="dele" class="fas fa-cloud-upload-alt fa-3x"></i>
+                <input id="upload-input" type="file" style="display:none;" onchange="updateBackground(event);">
+            </label>
+            <p class="upload-info" id="upload-info">Upload image of the accident</p>
+            <p class="upload-info" id="format-info">Supported formats: JPEG, PNG, JPG</p>
+        </div>
+
+        <div class="toggle-container">
+            <input type="checkbox">
+            <label>Requires Emergency Medical Service</label>
+        </div>
+
+        <textarea name="" id="" style="height: 150px; width: 90%; margin-left: 20px; border: 3px solid #0056D2; padding: 10px;" placeholder="Write the description here (optional)"></textarea>
+
+        <button class="btnAcc" type="submit" onclick="window.location.href='main.html'">Submit</button>
+        
+    </div>
+
+    <script>
+        function updateBackground(event) {
+            var uploadContainer = document.getElementById('upload-container');
+            var uploadInfo = document.getElementById('upload-info');
+            var formatInfo = document.getElementById('format-info');
+            var dele = document.getElementById('dele');
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+                uploadContainer.style.backgroundImage = `url('${e.target.result}')`;
+                uploadInfo.classList.add('hidden');
+                formatInfo.classList.add('hidden');
+                dele.classList.add('hidden');
+            }
+            
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>
